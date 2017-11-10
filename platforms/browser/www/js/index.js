@@ -60,7 +60,7 @@ function onOffline() {
 function openBrowser() {
    var url = 'https://dusthqdenevents.frb.io/';
    var target = '_self';
-   var options = "location = no"
+   var options = "location=no,toolbar=no"
    var ref = cordova.InAppBrowser.open(url, target, options);
 
    ref.addEventListener('loadstart', loadstartCallback);
@@ -73,11 +73,11 @@ function openBrowser() {
    }
 
    function loadstopCallback(event) {
-      console.log('Loading finished: ' + event.url)
+      window.plugins.spinnerDialog.hide();
    }
 
    function loaderrorCallback(error) {
-      console.log('Loading error: ' + error.message)
+      testShareSheet();
    }
 
    function exitCallback() {
