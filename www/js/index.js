@@ -59,7 +59,7 @@ function onOffline() {
 
 function openBrowser() {
    var url = 'https://dusthqdenevents.frb.io/';
-   var target = '_self';
+   var target = '_blank';
    var options = "location=no,toolbar=no"
    var ref = cordova.InAppBrowser.open(url, target, options);
 
